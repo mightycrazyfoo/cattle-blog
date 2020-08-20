@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
+
   before_action :set_article, only: [ :show, :edit, :update, :destroy]
+  
 
   def show
     
@@ -49,7 +51,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, :image)
   end
 
 end

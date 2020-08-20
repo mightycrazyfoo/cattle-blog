@@ -9,6 +9,10 @@
           </div>
           <div class="card-body">
             <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+            <div class="card-text text-left"><% if @article.image.attached? %>
+              <img class="rounded img-thumbnail" src="<%= (url_for(@article.image)) %>">
+              <% end %>
+            </div>
             <%= link_to 'edit', edit_article_path(@article), class:"btn btn-outline-info" %>
             <%= link_to 'delete', article_path(@article), class:"btn btn-outline-danger", method: :delete, data: { confirm: "Are you sure?" } %>
           </div>
